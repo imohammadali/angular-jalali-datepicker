@@ -1,71 +1,59 @@
-# Angular Jalali Date Picker
-This is a configurable jalali (persian, khorshidi, shamsi) date-picker build for Angular 2 applications and uses [jalali-moment](https://github.com/fingerpich/moment-jalaali) as its dependency.
-[DEMO](https://fingerpich.github.io/jalali-angular-datepicker/)
+<div align="center">
+<h1>angular jalali date picker</h1>
 
-Read this in other languages: [فارسی](./README.fa.md)
+<p>The angular date picker for use in angular</p>
+</div>
 
-[![Build Status](https://travis-ci.org/fingerpich/jalali-angular-datepicker.svg?branch=jalali-master)](https://travis-ci.org/fingerpich/jalali-angular-datepicker) 
-[![npm version](https://badge.fury.io/js/ng2-jalali-date-picker.svg)](https://badge.fury.io/js/ng2-jalali-date-picker)
-[![Package Quality](http://npm.packagequality.com/shield/ng2-jalali-date-picker.svg)](http://packagequality.com/#?package=ng2-jalali-date-picker)
-[![dependency Quality](https://david-dm.org/fingerpich/jalali-angular-datepicker.svg)](https://david-dm.org/fingerpich/jalali-angular-datepicker)
-[![dev dependency Quality](https://david-dm.org/fingerpich/jalali-angular-datepicker/dev-status.svg)](https://david-dm.org/fingerpich/jalali-angular-datepicker?type=dev)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/72a073fa893f4f0b823f41106c9e4f56)](https://www.codacy.com/app/zarei-bs/jalali-angular-datepicker?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fingerpich/jalali-angular-datepicker&amp;utm_campaign=Badge_Grade)
-[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/72a073fa893f4f0b823f41106c9e4f56)](https://www.codacy.com/app/zarei-bs/jalali-angular-datepicker?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fingerpich/jalali-angular-datepicker&amp;utm_campaign=Badge_Coverage)
+---
 
-## Screenshots
+<!-- prettier-ignore-start -->
+![npm](https://img.shields.io/npm/dw/angular-jalali-date-picker-ma)
+<!-- prettier-ignore-end -->
 
-<img alt="date picker" src="./screenshots/date_picker.png" width="200px"><img alt="date time picker" src="./screenshots/date_time_picker.png" width="200px"><img alt="month picker" src="./screenshots/month_picker.png" width="200px">
+## The problem
 
-## Installation:
-1. Download from npm:
-`npm install ng2-jalali-date-picker --save`  
-2. import the `DpDatePickerModule` module in typescript (.ts) or es6 files like below:  
- `import {DpDatePickerModule} from 'ng2-jalali-date-picker';`  
-3. Add `DpDatePickerModule` to your module imports:  
-```ts
- @NgModule({
-   ...
-   imports: [
-     ...
-     DpDatePickerModule
-   ]
- })
+In _multi-language_ projects, find a suitable datepicker in too hard if your project
+needs to support persian.
+
+## This solution
+
+I built this datepicker that supports these languages and also easy to use.
+
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [The problem](#the-problem)
+- [This solution](#this-solution)
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Basic Props](#basic-props)
+  - [lang](#lang)
+  - [change](#change)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Installation
+
+This module is distributed via [npm][npm] which is bundled with [node][node] and
+should be installed as one of your project's `dependencies`:
+
+```
+npm install --save angular-jalali-date-picker-ma
 ```
 
-## How to use
+> This package also depends on `angular`. Please make sure you have it installed
+> as well.
 
-```html
- <dp-date-picker 
-   dir="rtl"
-   [(ngModel)]="dateObject"
-   mode="day"
-   placeholder="تاریخ"
-   theme="dp-material">
- </dp-date-picker>
-```
 
-```ts
- dateObject = "";
- 
- //OR if you have initial value you could use following code
- import * as moment from 'jalali-moment';
- dateObject = moment('1395-11-22','jYYYY,jMM,jDD');
-```
-[Demo](https://plnkr.co/XJSWtt)
+## Basic Props
 
-#### How to use the output as a jalali (shamsi) date
- ```ts
-import * as moment from 'jalali-moment';
-dateObject.format('jYYYY/jMM/jD)'
-```
-read [jalali-moment](https://github.com/fingerpich/jalali-moment)
-
-#### How to use it with system.js
-[this Demo](https://plnkr.co/XJSWtt) is using system.js. 
-
+This is the list of props that you should probably know about.
 
 ### Attributes (Input):
-all attributes in the following table could be used as 
+all attributes in the following table could be used as
 ```html
 // a future selector
 <dp-date-picker mode="day" placeholder="تاریخ" [minDate]="moment()" [(ngModel)]="selectedDate"></dp-date-picker>
@@ -85,7 +73,7 @@ all attributes in the following table could be used as
 | theme                | `String`                            | `""`               | All                       | Theme is a class added to the popup container (and inner components) - this will allow styling of the calendar when it's appended to outer element (for example - body). There is a built in theme named dp-material, you can find it in the demo. |
 | config               | `IDatePickerConfig`                 | See Below          | All                       | Configuration object - see description below.                                                                                                                                                                                                      |
 
-### Attributes (Output):  
+### Attributes (Output):
 
 | Name                 | Event Arguments                     | Applies To                | Description                                                                                                                                                      |
 |----------------------|:-----------------------------------:|:-------------------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -96,8 +84,8 @@ all attributes in the following table could be used as
 | onLeftNav            | void                                | All Pickers               | This event will be emitted when click was made on left navigation button.                                                                                        |
 | onRightNav           | void                                | All Pickers               | This event will be emitted when click was made on right navigation button.                                                                                       |
 
-### Configuration:  
-In order to provide configurations to the date-picker you need to pass it to the `dp-date-picker` component:  
+### Configuration:
+In order to provide configurations to the date-picker you need to pass it to the `dp-date-picker` component:
 ```html
 <dp-date-picker [(ngModel)]="selectedDate" [config]="datePickerConfig"></dp-date-picker>
 ```
@@ -107,7 +95,7 @@ datePickerConfig = {
     format: 'YY/M/D'
 }
 ```
-Here are the available configurations:  
+Here are the available configurations:
 
 | Name                        | Type                  | Default                                                                   | Applies To                | Description                                                                                                                                                                                                                                                                   |
 |-----------------------------|:---------------------:|:-------------------------------------------------------------------------:|:-------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -161,12 +149,12 @@ Here are the available configurations:
 | showGoToCurrent             | `boolean`             | `true`                                                                    | All                       | Show/Hides the go to current button on the calendars navigation                                                                                                                                                                                                               |
 | hideOnOutsideClick          | `boolean`             | `true`                                                                    | All                       | Show/Hides the picker popup after click outside of the component                                                                                                                                                                                                              |
 
-### API:
+## Usage
 In order to use the date-picker api user the `@ViewChild` annotation in the date-picker containing component class, take at the example below:  
 Container component:
 ```ts  
 import {Component, ViewChild} from '@angular/core';
-import {DatePickerComponent} from 'ng2-jalali-date-picker';
+import {DatePickerComponent} from 'angular-jalali-date-picker-ma';
 
 @Component({
 selector: 'my-container',
@@ -195,7 +183,7 @@ class MyContainer {
 If you want to use API with [`Directive`](#directive) - you can do it by using `#dateDirectivePicker`, like below:
 ```ts
 import {Component, ViewChild} from '@angular/core';
-import {DatePickerDirective} from 'ng2-date-picker';
+import {DatePickerDirective} from 'angular-date-picker-ma';
 
 @Component({
 selector: 'my-container',
@@ -215,7 +203,7 @@ class MyContainer {
 }  
 ```
 
-Here is the list of APIs:  
+Here is the list of APIs:
 
 | Name                 | Signature                          | Description                      |
 |----------------------|:----------------------------------:|----------------------------------|
@@ -232,7 +220,7 @@ i.e.
 <dp-day-calendar [(ngModel)]="selectedDate" [config]="config"></dp-day-calendar>
 ```
 
-### Attributes:  
+### Attributes:
 | Name                 | Type                | Default                                                                  | Description                                                                                                                                                                                                                                        |
 |----------------------|:-------------------:|:------------------------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | required             | `Boolean`           | `undefined`                                                              | This is a validation rule, if there won't be any selected date then the containing form will be invalid.                                                                                                                                           |
@@ -241,7 +229,7 @@ i.e.
 | theme                | `String`            | `''`                                                                     | Theme is a class added to the popup container (and inner components) - this will allow styling of the calendar when it's appended to outer element (for example - body). There is a built in theme named dp-material, you can find it in the demo. |
 | config               | `IDayPickerConfig`  | See Below                                                                | Configuration object - see description below.                                                                                                                                                                                                      |
 
-### Attributes (Output):  
+### Attributes (Output):
 
 | Name                 | Event Arguments                     |  Description                                                                                                                                                      |
 |----------------------|:-----------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -252,12 +240,12 @@ i.e.
 | onLeftNav            | void                                | This event will be emitted when click was made on left navigation button.                                                                                         |
 | onRightNav           | void                                | This event will be emitted when click was made on right navigation button.                                                                                        |
 
-### Configuration:  
-In order to provide configurations to the day-calendar you need to pass it to the `dp-day-calendar` component:  
+### Configuration:
+In order to provide configurations to the day-calendar you need to pass it to the `dp-day-calendar` component:
 ```html
 <dp-day-calendar [(ngModel)]="selectedDate" [config]="config"></dp-day-calendar>
 ```
-Here are the available configurations:  
+Here are the available configurations:
 
 | Name                        | Type                 | Default                                                                   | Description                                                                                                                                                                                                                                                                   |
 |-----------------------------|:--------------------:|:-------------------------------------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -292,7 +280,7 @@ i.e.
 <dp-month-calendar [(ngModel)]="selectedDate" [config]="config"></dp-month-calendar>
 ```
 
-### Attributes:  
+### Attributes:
 | Name                 | Type                 | Default              | Description                                                                                                                                                                                                                                        |
 |----------------------|:--------------------:|:--------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | required             | `Boolean`            | `undefined`          | This is a validation rule, if there won't be any selected date then the containing form will be invalid.                                                                                                                                           |
@@ -301,7 +289,7 @@ i.e.
 | theme                | `String`             | `''`                 | Theme is a class added to the popup container (and inner components) - this will allow styling of the calendar when it's appended to outer element (for example - body). There is a built in theme named dp-material, you can find it in the demo. |
 | config               | `IMonthPickerConfig` | See Below            | Configuration object - see description below.                                                                                                                                                                                                     |
 
-### Attributes (Output):  
+### Attributes (Output):
 
 | Name                 | Event Arguments                     |  Description                                                                                                                                                      |
 |----------------------|:-----------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -312,12 +300,12 @@ i.e.
 | onRightNav           | void                                | This event will be emitted when click was made on right navigation button.                                                                                        |
 
 
-### Configuration:  
-In order to provide configurations to the month-calendar you need to pass it to the `dp-month-calendar` component:  
+### Configuration:
+In order to provide configurations to the month-calendar you need to pass it to the `dp-month-calendar` component:
 ```html
 <dp-month-calendar [(ngModel)]="selectedDate" [config]="config"></dp-month-calendar>
 ```
-Here are the available configurations:  
+Here are the available configurations:
 
 | Name                        | Type                 | Default                                                                   | Description                                                                                                                                                                                                                                                                   |
 |-----------------------------|:--------------------:|:-------------------------------------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -334,7 +322,7 @@ Here are the available configurations:
 | showMultipleYearsNavigation | `boolean`            | `false`                                                                   | If set to `true` will show buttons to navigate by multiple years (10 by default)                                                                                                                                                                                              |
 | multipleYearsNavigateBy     | `number`             | `10`                                                                      | Number of years to navigate when showMultipleYearsNavigation is `true`                                                                                                                                                                                                        |
 
-Here is the list of APIs:  
+Here is the list of APIs:
 
 | Name                 | Signature                                                                           | Description                      |
 |----------------------|:-----------------------------------------------------------------------------------:|----------------------------------|
@@ -352,7 +340,7 @@ i.e.
 <dp-time-select [(ngModel)]="selectedDate" [config]="config"></dp-time-select>
 ```
 
-### Attributes:  
+### Attributes:
 | Name                 | Type                 | Default              | Description                                                                                                                                                                                                                                        |
 |----------------------|:--------------------:|:--------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | required             | `Boolean`            | `undefined`          | This is a validation rule, if there won't be any selected date then the containing form will be invalid.                                                                                                                                           |
@@ -361,19 +349,19 @@ i.e.
 | theme                | `String`             | `''`                 | Theme is a class added to the popup container (and inner components) - this will allow styling of the calendar when it's appended to outer element (for example - body). There is a built in theme named dp-material, you can find it in the demo. |
 | config               | `ITimeSelectConfig`  | See Below            | Configuration object - see description below.                                                                                                                                                                                                      |
 
-### Attributes (Output):  
+### Attributes (Output):
 
 | Name                 | Event Arguments                     |  Description                                                                                                                                                      |
 |----------------------|:-----------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | onChange             | `IDate`                             |  This event will be emitted when time is selected.                                                                                                                |
 
 
-### Configuration:  
-In order to provide configurations to the time-select you need to pass it to the `dp-time-select` component:  
+### Configuration:
+In order to provide configurations to the time-select you need to pass it to the `dp-time-select` component:
 ```html
 <dp-time-select [(ngModel)]="selectedDate" [config]="config"></dp-time-select>
 ```
-Here are the available configurations:  
+Here are the available configurations:
 
 | Name                      | Type                 | Default                                                                   | Description                                                                                                                                                                                                                                                                   |
 |---------------------------|:--------------------:|:-------------------------------------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -400,7 +388,7 @@ i.e.
 <dp-day-time-calendar [(ngModel)]="selectedDate" [config]="config"></dp-day-time-calendar>
 ```
 
-### Attributes:  
+### Attributes:
 | Name                 | Type                | Default                                                                  | Description                                                                                                                                                                                                                                        |
 |----------------------|:-------------------:|:------------------------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | required             | `Boolean`           | `undefined`                                                              | This is a validation rule, if there won't be any selected date then the containing form will be invalid.                                                                                                                                           |
@@ -409,7 +397,7 @@ i.e.
 | theme                | `String`            | `''`                                                                     | Theme is a class added to the popup container (and inner components) - this will allow styling of the calendar when it's appended to outer element (for example - body). There is a built in theme named dp-material, you can find it in the demo. |
 | config               | `IDatePickerConfig`  | See Below                                                                | Configuration object - see description below.                                                                                                                                                                                                      |
 
-### Attributes (Output):  
+### Attributes (Output):
 
 | Name                 | Event Arguments                     |  Description                                                                                                                                                      |
 |----------------------|:-----------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -418,12 +406,12 @@ i.e.
 | onLeftNav            | void                                | This event will be emitted when click was made on left navigation button.                                                                                         |
 | onRightNav           | void                                | This event will be emitted when click was made on right navigation button.                                                                                        |
 
-### Configuration:  
-In order to provide configurations to the day-time-calendar you need to pass it to the `dp-day-time-calendar` component:  
+### Configuration:
+In order to provide configurations to the day-time-calendar you need to pass it to the `dp-day-time-calendar` component:
 ```html
 <dp-day-time-calendar [(ngModel)]="selectedDate" [config]="config"></dp-day-time-calendar>
 ```
-Here are the available configurations:  
+Here are the available configurations:
 
 | Name                        | Type                 | Default                                                                   | Description                                                                                                                                                                                                                                                                   |
 |-----------------------------|:--------------------:|:-------------------------------------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -487,7 +475,7 @@ or with `@angular/material`:
 </md-input-container>
 ```
 
-### Attributes:  
+### Attributes:
 | Name                 | Type                                      | Default       | Description                                                                                                                                                                                                                                        |
 |----------------------|:-----------------------------------------:|:-------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | mode                 | `'day'\|'month'\|'time'\|'daytime'`       | `'day'`       | the type of the calender which will be displayed in the picker                                                                                                                                                                                     |
@@ -495,28 +483,16 @@ or with `@angular/material`:
 | theme                | `String`                                  | `''`          | Theme is a class added to the popup container (and inner components) - this will allow styling of the calendar when it's appended to outer element (for example - body). There is a built in theme named dp-material, you can find it in the demo. |
 | config               | `IDatePickerDirectiveConfig`              | See Below     | Configuration object - see description below.                                                                                                                                                                                                      |
 
-### Configuration:  
-In order to provide configurations to the date-picker you need to pass it to the `[dpDayPicker]` directive:  
+### Configuration:
+In order to provide configurations to the date-picker you need to pass it to the `[dpDayPicker]` directive:
 ```html
 <input [(ngModel)]="selectedDate" [dpDayPicker]="datePickerConfig" />
 ```
 
 The `IDatePickerDirectiveConfig` is identical to [`IDatePickerConfig`](#configuration) above except that it lacks the `showGoToCurrent` property.
 
-Here is the list of APIs:  
+Here is the list of APIs:
 
 | Name                 | Signature                          | Description                      |
 |----------------------|:----------------------------------:|----------------------------------|
 | moveCalendarTo       | `(to: Moment \| String) => void`   | Moves calendar to specific date  |
-
-## Compatibility
-
-### Internet Explorer 10:
-
-Internet explorer 10 doesn't support hidden attribut, but you can use a css rule on `data-hidden` to hide date picker components:
-
-```css
-[data-hidden="true"] {
-  display: none !important;
-}
-```

@@ -1,7 +1,7 @@
 {
   "name": "angular-jalali-date-picker-ma",
-  "author": "Mojtaba Zarei",
-  "version": "2.4.3",
+  "author": "Mojtaba Zarei - build mohammadaliebrahimzadeh",
+  "version": "1.0.4",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
@@ -15,13 +15,13 @@
     "e2e:headless": "ng e2e -- headless",
     "build:demo": "rm -rf demo/*.js && rm -rf demo/*.css && ng build --prod --aot=false --bh /jalali-angular-datepicker/ && npm run build:index && cp dist/* demo",
     "build:index": "cd build-helpers && node index-maker.js",
-    "build:prod": "ng-packagr -p package.json && cp -R screenshots bin",
+    "build:prod": "ng-packagr -p package.json",
     "release": "npm run build:prod && npm publish bin",
     "pack": "cd bin && npm pack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fingerpich/angular-datepicker.git"
+    "url": "git+https://github.com/mohammadaliez/angular-jalali-datepicker.git"
   },
   "private": false,
   "keywords": [
@@ -91,12 +91,13 @@
     },
     "dest": "bin"
   },
-  "description": "انتخاب گر تاریخ شمسی در انگولار ۴ [دمو](https://fingerpich.github.io/jalali-angular-datepicker/)",
+  "description": "انتخاب گر تاریخ شمسی در انگولار ۴ [دمو](https://github.com/mohammadaliez/angular-jalali-datepicker/)",
   "bugs": {
-    "url": "https://github.com/fingerpich/angular-datepicker/issues"
+    "url": "https://github.com/mohammadaliez/angular-jalali-datepicker/issues"
   },
-  "homepage": "https://github.com/fingerpich/angular-datepicker#readme",
+  "homepage": "https://github.com/mohammadaliez/angular-jalali-datepicker#readme",
   "bin": {
-    "angular-jalali-date-picker-ma": "ng2-jalali-date-picker.es5.js"
-  }
+    "angular-jalali-date-picker-ma": "angular-jalali-date-picker-ma.es5.js"
+  },
+  "types": "./index.d.ts"
 }
