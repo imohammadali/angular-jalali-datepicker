@@ -30,8 +30,7 @@ I built this datepicker that supports these languages and also easy to use.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Basic Props](#basic-props)
-  - [lang](#lang)
-  - [change](#change)
+
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
